@@ -100,17 +100,20 @@ class SimAnneal(object):
         """
         # Initialize with the greedy solution.
         self.cur_solution, self.cur_fitness = self.initial_solution()
-
+        plt.figure()
+        self.mplot(self.data, self.cur_solution)
+        plt.show()
+        plt.close()
         print("Starting annealing.")
-        #plt.figure()
-        #self.make_plot()
+        # plt.figure()
+        # self.make_plot()
         while self.T >= self.stopping_temperature and self.iteration < self.stopping_iter:
             # produce a new classes candidate using false-reservoir computing
             self.classifier.train_reservoir(self.data, self.cur_solution)
             candidate = self.classifier.rc_classification(self.data)
 
             self.accept(candidate)
-            #self.make_plot()
+            # self.make_plot()
             self.T *= self.alpha
             self.iteration += 1
 

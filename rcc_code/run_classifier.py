@@ -120,7 +120,7 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # specify document name
-    file_name = "rforest_data.txt"
+    file_name = "dtree_data.txt"
 
     # read, format, and split the data
     training_data, test_data, training_classes, test_classes = get_data(file_name)
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     num_classes = training_classes.shape[1]  # np.unique(training_classes).size
 
     properties = {
-        "reservoir_size": 100,
+        "reservoir_size": 20,
         "training_length": training_length,
         "num_properties": num_properties,
         "num_classes": num_classes

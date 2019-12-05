@@ -2,8 +2,8 @@ from anneal import SimAnneal
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-"""
-sz = 200
+
+sz = 100
 # make two distinct classes
 testers = np.random.randint(2, size=sz)
 data = np.transpose(np.vstack((testers, testers)))
@@ -20,12 +20,12 @@ all_data = np.loadtxt(file_name, delimiter=',')
 
 # last column of data contains the classes for each input vector
 data = all_data[:, :-1]
-
+"""
 # get the parameters
 training_length, num_properties = data.shape
 
 properties = {
-    "reservoir_size": 100,
+    "reservoir_size": 20,
     "training_length": training_length,
     "num_properties": num_properties,
     "num_classes": 2
@@ -39,5 +39,4 @@ if __name__ == "__main__":
     sa.plot_best()
     plt.show()
     plt.figure()
-    sa.plot_learning()
 
