@@ -1,0 +1,37 @@
+########################################
+
+Classifier performance on training dataset
+
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99        77
+         1.0       1.00      1.00      1.00        74
+         2.0       1.00      0.99      0.99        77
+         3.0       1.00      1.00      1.00        72
+
+    accuracy                           1.00       300
+   macro avg       1.00      1.00      1.00       300
+weighted avg       1.00      1.00      1.00       300
+
+########################################
+
+########################################
+
+Classifier performance on test dataset
+
+              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00        23
+         1.0       0.96      1.00      0.98        26
+         2.0       1.00      0.96      0.98        23
+         3.0       1.00      1.00      1.00        28
+
+    accuracy                           0.99       100
+   macro avg       0.99      0.99      0.99       100
+weighted avg       0.99      0.99      0.99       100
+
+########################################
+
+Running time: 0.014285802841186523sec
+
+Process finished with exit code 0
