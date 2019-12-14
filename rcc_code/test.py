@@ -12,9 +12,10 @@ print(data)
 # randomly adjust the values
 adjust = (np.random.rand(sz, 2) - 0.5)*0.5
 data = data + adjust
+
 """
 # specify document name
-file_name = "dtree_data.txt"
+file_name = "multivar_data_nb.txt"
 
 all_data = np.loadtxt(file_name, delimiter=',')
 

@@ -120,7 +120,7 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # specify document name
-    file_name = "dtree_data.txt"
+    file_name = "multivar_data_nb.txt"
 
     # read, format, and split the data
     training_data, test_data, training_classes, test_classes = get_data(file_name)
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     num_classes = training_classes.shape[1]  # np.unique(training_classes).size
 
     properties = {
-        "reservoir_size": 20,
+        "reservoir_size": 50,
         "training_length": training_length,
         "num_properties": num_properties,
         "num_classes": num_classes
@@ -162,18 +162,20 @@ if __name__ == "__main__":
     print(classification_report(test_classes, output_test))
     print("#"*55 + "\n")
 
-
     # print running time
     print("Running time: " + str(time.time() - start_time) + "sec")
 
+    total_data = np.vstack((training_data, test_data))
+    total_classes = np.vstack((training_classes, test_classes))
+    total_output = np.vstack((output_training, output_test))
     plt.figure()
 
     plt.subplot(121)
-    mplot(num_classes, training_data, training_classes)
+    mplot(num_classes, total_data, total_classes)
     plt.title('True classes', {"size": 12})
 
     plt.subplot(122)
-    mplot(num_classes, training_data, output_training)
+    mplot(num_classes, total_data, total_output)
     plt.title('Classifier result', {"size": 12})
     plt.show()
 

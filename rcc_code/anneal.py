@@ -93,7 +93,6 @@ class SimAnneal(object):
                         self.cur_solution = self.best_solution
                         self.cur_fitness = self.best_fitness
 
-
     def anneal(self):
         """
         Execute simulated annealing algorithm.
@@ -105,7 +104,7 @@ class SimAnneal(object):
         plt.show()
         plt.close()
         print("Starting annealing.")
-        # plt.figure()
+        plt.figure()
         # self.make_plot()
         while self.T >= self.stopping_temperature and self.iteration < self.stopping_iter:
             # produce a new classes candidate using false-reservoir computing
@@ -113,7 +112,8 @@ class SimAnneal(object):
             candidate = self.classifier.rc_classification(self.data)
 
             self.accept(candidate)
-            # self.make_plot()
+            self.make_plot()
+            plt.show()
             self.T *= self.alpha
             self.iteration += 1
 
@@ -134,11 +134,9 @@ class SimAnneal(object):
 
     def plot_this(self):
         self.mplot(self.data, self.cur_solution)
-        plt.show()
 
     def plot_best(self):
         self.mplot(self.data, self.best_solution)
-        plt.show()
 
     def make_plot(self):
         plt.close()

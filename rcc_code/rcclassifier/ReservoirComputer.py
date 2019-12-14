@@ -65,6 +65,7 @@ class ReservoirComputer:
         # generate the output layer matrix
         # found as the product of the pseudo-inverse of state matrix and the true_output matrix
         self.output_layer.output_matrix = np.matmul(np.linalg.pinv(states), true_output)
+        print(self.output_layer.output_matrix.shape)
 
     def predict_single_class(self, input_vector):
         """
