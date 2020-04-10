@@ -120,7 +120,7 @@ class Reservoir:
         creates the random A matrix from the provided parameters
     """
 
-    def __init__(self, reservoir_size, degree=3, radius=0.9, recall=0.0):
+    def __init__(self, reservoir_size, degree=3, radius=0.8, recall=0.0):
         """
 
         Parameters

@@ -15,11 +15,11 @@ def build_arg_parser():
 
 
 if __name__ == '__main__':
-    args = build_arg_parser().parse_args()
-    classifier_type = args.classifier_type
+    # args = build_arg_parser().parse_args()
+    classifier_type = 'randomforest'
     print('classifier_type:'+classifier_type+'\n')
 
-    input_file = 'rforest_data.txt'
+    input_file = 'seeds_dataset.txt'
     data = np.loadtxt(input_file, delimiter=',')
     X, y = data[:, :-1], data[:, -1]
     class_0 = np.array(X[y == 0])

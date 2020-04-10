@@ -13,7 +13,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn import model_selection
 from utilities import visualize_classifier
 
-input_file = 'rforest_data.txt'
+input_file = 'iris.txt'
 data = np.loadtxt(input_file, delimiter=',')
 X, y = data[:, :-1], data[:, -1]
 print(X[:2,:])
