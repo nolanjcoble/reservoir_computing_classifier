@@ -4,7 +4,9 @@ import numpy as np
 from sklearn import model_selection
 from sklearn.metrics import classification_report
 import time
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use("TkAgg")
 from rcclassifier.mplot import mplot
 
 
@@ -120,7 +122,7 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # specify document name
-    file_name = "seeds_dataset.txt"
+    file_name = "sample_data.txt"
 
     # read, format, and split the data
     training_data, test_data, training_classes, test_classes = get_data(file_name)
@@ -177,5 +179,5 @@ if __name__ == "__main__":
     plt.subplot(122)
     mplot(num_classes, total_data, total_output)
     plt.title('Classifier result', {"size": 12})
-    # plt.show()
+    plt.show()
 

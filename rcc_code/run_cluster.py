@@ -43,7 +43,7 @@ if __name__ == '__main__':
     plt.figure()
     mplot(data, classes)
     plt.show()
-    for x in range(2):
+    for x in range(20):
         # train the classifier
         classifier.train_reservoir(data, classes)
 

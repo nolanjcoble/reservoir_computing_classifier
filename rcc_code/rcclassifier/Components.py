@@ -222,7 +222,7 @@ class OutputLayer:
         Parameters
         ----------
         num_classes: int
-            number of classes that that the input will have
+            number of classes that the input will have
         training_length:
             amount of available training data
         reservoir_size:
